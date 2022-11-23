@@ -54,3 +54,6 @@ document.getElementById('container')
         .addEventListener('click', ativarDiv);
 
 window.addEventListener('keyup',ativarDiv);
+
+
+// PAREI EM 42 minutos video mini projetos

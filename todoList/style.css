@@ -1,5 +1,5 @@
-root {
-    --primary-color: #2d084a;
+:root {
+    --primary-color: #2970b8;
     --secondary-color: #0F0F0B;
 }
 
@@ -8,16 +8,14 @@ root {
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
 }
 
 body {
     background-color: var(--primary-color);
     font: bold 2rem 'Open Sans', sans-serif;
 }
-
 
 .todo {
     display: flex;
@@ -27,7 +25,6 @@ body {
     margin: 0 auto;
     gap: 15px;
 }
-
 
 .todo__title {
     display: flex;
@@ -42,14 +39,12 @@ body {
     color: var(--primary-color);
 }
 
-
 .todo__list {
     display: flex;
     width: 100%;
     flex-direction: column;
     gap: 10px;
 }
-
 
 .todo__item{
     display: flex;

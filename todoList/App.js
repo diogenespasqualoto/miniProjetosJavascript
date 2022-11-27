@@ -2,7 +2,9 @@
 
 let banco = [
     { 'tarefa': 'estudar JS', 'status': '' },
-    { 'tarefa': 'Netflix', 'status': 'checked' }
+    { 'tarefa': 'Netflix', 'status': 'checked' },
+    { 'tarefa': 'teste1', 'status': '' }
+
 ];
 
 const criarNovaLabel = (tarefa, status, indice) => {
@@ -38,9 +40,24 @@ const inserirItem = (evento) => {
     }
 }
 
+const removerItem = (indice) => {
+    banco.splice(indice, 1);
+    atualizarTela();
+}
+const atualizarItem = (indice) => {
+    banco[indice].status = banco[indice].status === '' ? 'checked' : '';
+    atualizarTela();
+}
 const clickItem = (evento) => {
     const elemento = evento.target;
-    console.log(elemento);
+    console.log(elemento.type);
+    if (elemento.type === 'button') {
+        const indice = elemento.dataset.indice;
+        removerItem(indice);
+    } else if (elemento.type === 'checkbox') {
+        const indice = elemento.dataset.indice;
+        atualizarItem(indice);
+    }
 }
 
 document.getElementById('newItem').addEventListener('keypress', inserirItem);

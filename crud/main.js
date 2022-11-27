@@ -11,12 +11,16 @@ const tempClient = {
     cidade: "são roque"
 }
 
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
+const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient))
+
 // CRUD - create read update delete
 
+// CRUD - CREATE
 const createClient = (client) => {
-    const db_client = JSON.parse(localStorage.getItem('db_client')) ?? []
-    db_client.push(client)
-    localStorage.setItem("db_client", JSON.stringify(db_client))
+    const dbClient = getLocalStorage()
+    dbClient.push(client)
+    setLocalStorage(dbClient)
 }
 
 

@@ -5,13 +5,13 @@ let banco = [
     { 'tarefa': 'Netflix', 'status': 'checked' }
 ];
 
-const criarNovaLabel = (tarefa, status) => {
+const criarNovaLabel = (tarefa, status, indice) => {
     const item = document.createElement('label');
     item.classList.add('todo__item');
     item.innerHTML = `
-    <input type="checkbox" ${status}>
+    <input type="checkbox" ${status} data-indice=${indice} >
     <div class="">${tarefa}</div>
-    <input type="button" value="X">
+    <input type="button" value="X" data-indice=${indice} >
     `
     document.getElementById('todoList').appendChild(item);
 }
@@ -25,7 +25,7 @@ const limparTarefas = () => {
 
 const atualizarTela = () => {
     limparTarefas();
-    banco.forEach(item => criarNovaLabel(item.tarefa, item.status));
+    banco.forEach((item, indice) => criarNovaLabel(item.tarefa, item.status, indice));
 }
 
 const inserirItem = (evento) => {

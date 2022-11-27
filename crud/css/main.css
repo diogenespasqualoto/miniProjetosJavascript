@@ -5,13 +5,14 @@
 }
 
 :root {
-    --primary-color: #FFBA00;
+    --primary-color: #33066e;
     --secundary-color: #FFF1CC;
     --shadow-color: #CCC;
     --text-color: #FFF;
 }
 
 body {
+    background-color: black;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -28,7 +29,7 @@ header {
 }
 
 .header-title {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 2rem;
 }
 

@@ -7,12 +7,6 @@ const closeModal = () => {
     document.getElementById('modal').classList.remove('active');
 }
 
-const tempClient = {
-    nome: "Diógenes pasqualoto da silva",
-    email: "diogenespasqualoto@gmail.com",
-    celular: "123344455555",
-    cidade: "são roque"
-}
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient))
@@ -62,6 +56,12 @@ const saveClient = () => {
         closeModal()
     }
 }
+
+const updateTable=()=>{
+    const dbClient=readClient()
+}
+
+updateTable()
 
 // Eventos
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)

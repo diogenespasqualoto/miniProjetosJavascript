@@ -58,7 +58,9 @@ const saveClient = () => {
             updateTable()
             closeModal()
         } else {
-            console.log('Editando ')
+            updateClient(index, client)
+            updateTable()
+            closeModal()
         }
 
     }
@@ -101,6 +103,7 @@ const fillFields = (client) => {
 
 const editClient = (index) => {
     const client = readClient()[index]
+    client.index = index
     fillFields(client)
     openModal();
 }
@@ -112,7 +115,13 @@ const editDelete = (event) => {
         if (action == 'edit') {
             editClient(index)
         } else {
-            console.log("delete o cliente")
+            const client = readClient()[index]
+            const response = confirm(`Are you sure you want to delete ${client.nome}`)
+            if (response) {
+                deleteClient(index)
+                updateTable()
+            }
+
         }
     }
 }

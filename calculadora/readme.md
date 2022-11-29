@@ -1,6 +1,6 @@
  <tr>
     <td>
-      <h3>06 - Calculadora</h3>
-      <li><a href="./06-Calculadora/">Código</a></li>
+      <h1>Calculadora</h1>
+      <p>Calculadora feita com JS Puro</p>
     </td>
   </tr>
